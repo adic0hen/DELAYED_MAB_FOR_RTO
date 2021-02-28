@@ -119,7 +119,7 @@ def experiment_different_servers():
         print("Regret was {:,}".format(results.total_regret))
         curr_axis = axs[i//2][i%2]
         curr_axis.set_title("{}, Regret - {:,}".format(server.get_name(), results.total_regret))
-        xs = np.linspace(0, RTT_RANGE, len(results.actual_rtt))
+        xs = np.linspace(0, rounds, len(results.actual_rtt))
         curr_axis.plot(xs, results.actual_rtt, label="actual rtt")
         curr_axis.plot(xs, results.chosen_arms_list, label="chosen rto")
     plt.legend()
